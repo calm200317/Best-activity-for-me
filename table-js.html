@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Period Exam</title>
+  <style>
+    #tbl_head{
+      background-color: #33FFBD;
+      font-size: 45px;
+
+    }
+    table{
+      border-radius: 20px;
+      background-color: rgb(222, 249, 229);
+      font-size: 30px;
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <table border="1">
+    <tr><th colspan="7" id="tbl_head">To do list 2024</th></tr>
+    <tr>
+      <th>SUN</th>
+      <th>MON</th>
+      <th>TUE</th>
+      <th>WED</th>
+      <th>THU</th>
+      <th>FRI</th>
+      <th>SAT</th>
+    </tr>
+    <tr><td id="td_one">11</td>
+      <td>12</td>
+      <td>13</td>
+      <td id="td_two">14</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+    </tr>
+    <td colspan="7" id="message1"><p id="message">
+    </p></td></tr>
+    <tr>
+    <td colspan="7" id="message3"><p id="message2">
+    
+
+    </p></td></tr>
+  </tr>
+  </table>
+
+  <div>
+    <table border="1" >
+      <tr>
+        <th>Products</th>
+        <th>COST</th>
+        <th>Pieces</th>
+      </tr>
+      <tr>
+        <td><img id="c1" src="choco.jpg" alt=""></td>
+        <td>PHP 300.00</td>
+        <td id="piece"></td></tr>
+        <tr>
+          <td><img id="c2" src="flower.jpg" alt=""></td>
+          <td>PHP 780.00</td>
+          <td id="piece2"></td></tr>
+          <tr>
+            <td><img id="c3" src="teddy.jpg" alt=""></td>
+            <td>PHP 1300.00</td>
+            <td id="piece3"></td>
+          
+          </tr>
+            <tr><td>Total cost: </td>
+              
+            <td colspan="2" id="total"></td></tr>
+            <tr><td id="pay">Pay</td>
+            <td colspan="2" id="change">change:</td></tr>
+    </table>
+  </div>
+
+
+    <script>
+      var change=0;
+      var total=0;
+      var pay1=0;
+      var cost=0;
+      document.getElementById("td_one").addEventListener("click", function(){
+        var td1=prompt("enter to do");
+        
+
+        if(td1==null){
+          alert("To Do List Not Set");
+        }else{
+          var space="\n";
+          document.getElementById("message1").style.backgroundColor="blue";
+          document.getElementById("td_one").style.backgroundColor="lightblue";
+          document.getElementById("message").innerHTML+=td1+"<br>";
+        };
+
+      });
+      document.getElementById("td_two").addEventListener("click", function(){
+        var td2=prompt("enter to do");
+
+        if(td2==null){
+          alert("To Do List Not Set");
+        }else{
+          var space="\n";
+          
+          document.getElementById("message3").style.backgroundColor="red";
+          document.getElementById("td_two").style.backgroundColor="lightpink";
+          document.getElementById("message2").innerHTML+=td2+"<br>";
+        };
+
+      });
+
+      document.getElementById("c1").addEventListener("click", function(){
+        var c1=prompt("Enter pieces");
+        var c11=parseInt(c1);
+      var total1=c11*300;
+        total+=total1;
+        document.getElementById("total").innerHTML=total;
+        document.getElementById("piece").innerHTML=c11;
+      });
+
+      document.getElementById("c2").addEventListener("click", function(){
+        var c2=prompt("Enter pieces");
+        var c12=parseInt(c2);
+       var  total2=c12*780;
+        total+=total2;
+        document.getElementById("total").innerHTML=total;
+        document.getElementById("piece2").innerHTML=c12;
+      });
+
+      document.getElementById("c3").addEventListener("click", function(){
+        var c3=prompt("Enter pieces");
+        var c13=parseInt(c3);
+      var total23=c13*1300;
+        total+=total23;
+        document.getElementById("total").innerHTML=total;
+        document.getElementById("piece3").innerHTML=c13;
+      });
+
+      document.getElementById("pay").addEventListener("click",function(){
+        var pay=prompt("Enter amount");
+        var pay2=parseInt(pay);
+        cost=total;
+        pay1=pay-cost;
+        change=pay1;
+        if(pay2<cost){
+          document.getElementById("change").innerHTML="insufficient";
+        }else{
+          document.getElementById("change").innerHTML=change;
+        }
+        
+      });
+
+    </script>
+</body>
+</html>
